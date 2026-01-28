@@ -13,11 +13,12 @@
 
 print('-----------------[ 5 year Insurance Commission Calculation]------------------')
 amount = 100000
+# initialize variables
 agent_com = 0
 unit_m_com = 0
 branch_h_com = 0
 
-
+# write code here
 
 print(f'5 years commission breakdown:')
 print(f'Agent: {agent_com}')
@@ -26,3 +27,8 @@ print(f'Branch Head: {branch_h_com}')
 
 
 
+# TEST CASE:
+# 5 years commission breakdown:
+# Agent: 43000.0
+# Unit manager: 27000.0
+# Branch Head: 13000.0
