@@ -13,7 +13,7 @@
 # [4] Withholding tax
     # 0 - 20832 -> 0%
     # 20833 - above -> 20% of the excess over 20832
-    # theres other condition for higher salary but for this activity we will just use this
+    # NOTE: In reality, there are different condition for other salary range but for this activity we will just use this to keep it simple
     
 
 # Create a program that calculates the net pay of a government employee after deductions.
@@ -30,6 +30,30 @@ print('Pag-IBIG Deduction: ')
 print('Withholding Tax Deduction: ')
 print('Net pay: ')
 
+
+
+
+
+# TEST CASE for 20k
+
+# Enter your monthly wage:
+# 20000
+# GSIS Deduction: 1800.0
+# PhilHealth Deduction: 500.0
+# Pag-IBIG Deduction: 200
+# Withholding Tax Deduction: 0
+# Net pay: 17500.0
+
+
+# TEST CASE for 100k
+
+# Enter your monthly wage:
+# 100000
+# GSIS Deduction: 9000.0
+# PhilHealth Deduction: 5000
+# Pag-IBIG Deduction: 200
+# Withholding Tax Deduction: 15833.6
+# Net pay: 69966.4
 
 
 
