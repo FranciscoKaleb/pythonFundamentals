@@ -1,13 +1,13 @@
 print('-----------------[1 If Statements]------------------') 
 if 10 > 5:
     print("10 is greater than 5")
+    print("10 is greater than 5")
     
 print('-----------------[2 If-Else Statements]------------------')
 
-if 10 < 5:
+if 10 > 5:
     print("10 is less than 5")
-else:
-    print("10 is not less than 5")
+
 
 print('-----------------[3 If-Elif-Else Statements]------------------')
 
@@ -27,7 +27,7 @@ if num > 0:
         print("The number is positive and even.")
     else: 
         print("The number is positive and odd.") 
-        
+     
         
 print('-----------------[5 multiple If Statements]------------------')
 num = 6

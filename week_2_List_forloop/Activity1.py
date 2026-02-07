@@ -31,6 +31,30 @@ names_payment = [
 ]
 
 
+total = 0
+average = 0
+manager_total = 0
+unit_head_total = 0
+company_total = 0
+
+for x in names_payment:
+    total = total + x[1]
+    manager_total = manager_total + x[1]*0.17
+    unit_head_total = unit_head_total + x[1]*0.1
+    company_total = company_total + x[1]*0.68
+
+print(f'total: {total}')
+print(f'average: {total/len(names_payment)}')
+print(f'manager: {manager_total}')
+print(f'unit head: {unit_head_total}')
+print(f'company: {company_total}')
+
+for x in names_payment:
+    print(x[0] , x[1]*0.05)
+
+
+
+
 # Expected output:
 
 # total: 65300

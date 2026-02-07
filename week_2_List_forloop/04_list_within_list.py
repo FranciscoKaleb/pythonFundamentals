@@ -84,8 +84,26 @@ aa_25_t_count = 0
 
 for mem in data:
     if mem[1] > 25 and mem[3] == True:
-        aa_25_t_sum += mem[1]
-        aa_25_t_count += 1
+        aa_25_t_sum = aa_25_t_sum + mem[1]
+        aa_25_t_count = aa_25_t_count + 1
 
 age_average = aa_25_t_sum/aa_25_t_count
 print(f'Average age of age greater then 25 and finished college: {age_average}')
+
+
+
+
+
+
+
+
+# total sales:  Summation of price x quantity sold
+
+# average price per category:
+# (sum of price of a category) / (count_of_category)
+
+
+
+
+
+

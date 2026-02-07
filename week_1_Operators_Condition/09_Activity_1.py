@@ -26,7 +26,7 @@ monthly_wage = float(input())
 GSIS_deduction = 0.09 * monthly_wage
 
 Philhealth_deduction = 0 # initialize variable
- 
+
 if monthly_wage <= 10000:
     Philhealth_deduction = 250
 elif monthly_wage > 10000 and monthly_wage < 100000:

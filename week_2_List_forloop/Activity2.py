@@ -6,7 +6,7 @@
 # [Item Name, Price, Category, VAT Type, sold items quantity, remaining stock quantity]
 november_sales = [
     ['Chicken', 150, 'Food', 'Standard VAT', 804, 1200],
-    ['Hotdog', 50, 'Food', 'Standard VAT', 1200, 2000],
+    ['Hotdog', 50, 'Food', -'Standard VAT', 1200, 2000],
     ['Rice', 40, 'Food', 'Zero-Rated', 1500, 2500],
     ['Bread', 30, 'Food', 'Standard VAT', 900, 1500],
     ['Soap', 25, 'Non-Food', 'Standard VAT', 600, 1000],
@@ -41,11 +41,14 @@ print('-----------------[ [1] total number of items sold]------------------')
 # Categories: Food, Non-Food, Health, Stationery
 # type code here
 
-items_sold = 0
-
 # expected output
 # Total number of items sold: 15854
+items_sold = 0
 
+for item in november_sales:
+    items_sold = items_sold + item[4]
+print(f'Total number of items sold: {items_sold}')
+print()
 
 print('-----------------[ [2] total number of sold items per category]------------------')
 # [Item Name, Price, Category, VAT Type, sold items quantity, remaining stock quantity]
@@ -53,27 +56,38 @@ print('-----------------[ [2] total number of sold items per category]----------
 # type code here
 # we are finding quantity here
 
+food_sold = 0
+non_food_sold = 0
+health_sold = 0
+stationery_sold = 0
 
-# expected output:
-
-# food sold: 8754
-# non-food sold: 2100
-# health sold: 900
-# stationery sold: 4100
-# total sold: 15854
+for item in november_sales:
+    if item[2] == 'Food':
+        food_sold = food_sold + item[4]
+    elif item[2] == 'Non-Food':
+        non_food_sold = non_food_sold + item[4]
+    elif item[2] == 'Health':
+        health_sold = health_sold + item[4]
+    else:
+        stationery_sold = stationery_sold + item[4]
+        
+print(f'food sold: {food_sold}')
+print(f'non-food sold: {non_food_sold}')
+print(f'health sold: {health_sold}')
+print(f'stationery sold: {stationery_sold}')
+print(f'total sold: {items_sold}')
+print()
 
 print('-----------------[ [3] total sales amount]------------------')
 # [Item Name, Price, Category, VAT Type, sold items quantity, remaining stock quantity]
 # Categories: Food, Non-Food, Health, Stationery
 # type code here
 total_sales = 0
+for item in november_sales:
+    total_sales = total_sales + item[1]*item[4]
 
 print(f'total sales: {total_sales}')
 print()
-
-#expected output:
-
-# total sales: 1102850
 
 
 
@@ -81,25 +95,69 @@ print('-----------------[ [4] total sales amount per category]------------------
 # [Item Name, Price, Category, VAT Type, sold items quantity, remaining stock quantity]
 # Categories: Food, Non-Food, Health, Stationery
 # type code here
+food_sales = 0
+non_food_sales = 0
+health_sales = 0
+stationery_sales = 0
 
-# expected output:
-
-# food sales: 560100
-# non-food sales: 142000
-# health sales: 250000
-# stationery sales: 150750
-# total sales: 1102850
+for item in november_sales:
+    if item[2] == 'Food':
+        food_sales = food_sales + item[1]*item[4]
+    elif item[2] == 'Non-Food':
+        non_food_sales = non_food_sales + item[1]*item[4]
+    elif item[2] == 'Health':
+        health_sales = health_sales + item[1]*item[4]
+    else:
+        stationery_sales = stationery_sales + item[1]*item[4]
+        
+total_sales = food_sales + non_food_sales + health_sales + stationery_sales
+    
+print(f'food sales: {food_sales}')
+print(f'non-food sales: {non_food_sales}')
+print(f'health sales: {health_sales}')
+print(f'stationery sales: {stationery_sales}')
+print(f'total sales: {total_sales}')
+print()
 
 print('-----------------[ [5] average price of items per category]------------------')
 # [Item Name, Price, Category, VAT Type, sold items quantity, remaining stock quantity]
 # Categories: Food, Non-Food, Health, Stationery
 # type code here
 
-# expected output:
+food_price_sum = 0
+food_count = 0
 
-# food price average: 66.25
-# non-food price average: 71.25
-# health price average: 316.6666666666667
-# stationery price average: 62.0
+non_food_price_sum = 0
+non_food_count = 0
+
+health_price_sum = 0
+health_count = 0
+
+stationery_price_sum = 0
+stationery_count = 0
+
+for item in november_sales:
+    if item[2] == 'Food':
+        food_price_sum = food_price_sum + item[1]
+        food_count = food_count + 1
+    elif item[2] == 'Non-Food':
+        non_food_price_sum = non_food_price_sum + item[1]
+        non_food_count = non_food_count + 1
+    elif item[2] == 'Health':
+        health_price_sum = health_price_sum + item[1]
+        health_count = health_count + 1
+    else:
+        stationery_price_sum = stationery_price_sum + item[1]
+        stationery_count = stationery_count + 1
+
+food_price_average = food_price_sum/food_count
+non_food_average = non_food_price_sum/non_food_count
+health_average = health_price_sum/health_count
+stationery_average = stationery_price_sum/stationery_count
+
+print(f'food price average: {food_price_average}')
+print(f'non-food price average: {non_food_average}')
+print(f'health price average: {health_average}')
+print(f'stationery price average: {stationery_average}')
 
 

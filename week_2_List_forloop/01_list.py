@@ -1,8 +1,11 @@
 
+# Python list characteristics:
 
-# Lists is like the all the c++ containers that can contain any data type
-# Lists is NOT immutable, you can change its members
-# able to contain any datatype unlike c++/Java which only allows specific data type for a container
+# Can contain duplicate items
+# Mutable: items can be modified, replaced, or removed
+# Ordered: maintains the order in which items are added
+# Index-based: items are accessed using their position (starting from 0)
+# Can store mixed data types (integers, strings, booleans, even other lists)
 
 
 
@@ -24,7 +27,7 @@ print()
 
 # [3] accessing list elements
 print('-----------------[3 Accessing list elements]------------------')
-print(num_list[0])
+print(num_list[1])
 print()
 
 

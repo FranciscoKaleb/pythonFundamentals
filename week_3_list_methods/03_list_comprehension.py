@@ -1,4 +1,5 @@
-
+# List comprehension offers a shorter syntax when you want to create a new list 
+# based on the values of an existing list.
 
 #[1] creating an empty list with specific index
 print('-----------------[1]------------------')
@@ -8,7 +9,7 @@ print(myList)
 #[2] appending strings to a list using for loop
 print('-----------------[2]------------------')
 myList2 = []
-myString = 'Czarina'
+myString = 'Hello world'
 
 for mem in myString:
     myList2.append(mem)
@@ -21,7 +22,7 @@ print(new_list)
 
 #[3] list comprehension
 print('-----------------[3]------------------')
-myList3 = [x for x in 'Czarina']
+myList3 = [x for x in 'Helo world']
 
 print(myList3)
 
@@ -59,7 +60,7 @@ for x in [1,2,3]:
         myList6.append(x*y)
 print(myList6)
 
-#[9] 
+#[9] nested for loop in list comprehension(for loop inside a for loop) - 
 print('-----------------[9]------------------')
 myList7 = [x*y for x in [1,2,3] for y in [100,200,300]]
 print(myList7)

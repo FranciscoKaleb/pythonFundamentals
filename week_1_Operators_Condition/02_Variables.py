@@ -14,7 +14,7 @@ num2 = 1.5
 print(num2)
 
 # in this case, name is a string
-text = 'Hello World'
+text = "Hello World"
 print(text)
 
 
