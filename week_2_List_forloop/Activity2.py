@@ -6,7 +6,7 @@
 # [Item Name, Price, Category, VAT Type, sold items quantity, remaining stock quantity]
 november_sales = [
     ['Chicken', 150, 'Food', 'Standard VAT', 804, 1200],
-    ['Hotdog', 50, 'Food', -'Standard VAT', 1200, 2000],
+    ['Hotdog', 50, 'Food', 'Standard VAT', 1200, 2000],
     ['Rice', 40, 'Food', 'Zero-Rated', 1500, 2500],
     ['Bread', 30, 'Food', 'Standard VAT', 900, 1500],
     ['Soap', 25, 'Non-Food', 'Standard VAT', 600, 1000],
@@ -161,3 +161,5 @@ print(f'health price average: {health_average}')
 print(f'stationery price average: {stationery_average}')
 
 
+price_list = [row[1] for row in november_sales]
+print(min(price_list))
