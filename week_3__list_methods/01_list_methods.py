@@ -1,11 +1,6 @@
 
 
 
-
-
-
-
-
 # [1] concatenating/combining list
 print('-----------------[1 concatenating list]------------------')
 num_list = [1,2,3,4,5]

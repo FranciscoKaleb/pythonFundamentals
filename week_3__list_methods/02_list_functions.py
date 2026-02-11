@@ -28,4 +28,15 @@ print()
 print('-----------------[5] sorted(a)]------------------')
 myList5 = [5, 4, 3, 2, 1]
 print(sorted(myList5))
-print()
+print(myList5)
+
+
+
+data = [
+    ['kaleb', 300],
+    ['kaleb', 900],
+    ['sam', 800]
+]
+
+price_list = [x[1] for x in data]
+print(price_list)

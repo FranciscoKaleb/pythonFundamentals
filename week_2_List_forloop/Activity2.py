@@ -161,5 +161,3 @@ print(f'health price average: {health_average}')
 print(f'stationery price average: {stationery_average}')
 
 
-price_list = [row[1] for row in november_sales]
-print(min(price_list))

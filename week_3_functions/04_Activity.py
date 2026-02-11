@@ -29,6 +29,7 @@ november_sales = [
 ]
 
 december_sales = [
+
     ['Chicken', 160, 'Food', 'Regular', 'Standard VAT', 1100, 1500],
     ['Hotdog', 50, 'Food', 'Regular', 'Standard VAT', 1800, 2500],
     ['Rice', 40, 'Food', 'Regular', 'Zero-Rated', 2200, 3000],
