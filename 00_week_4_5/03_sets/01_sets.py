@@ -1,18 +1,12 @@
-#Sets are unordered collection of UNIQUE elements
+# Sets are unordered collection of UNIQUE elements
 # UNIQUE - no duplicates
 
-mySet = set()
+mySet = set() # only accepts number
 
-set1 = {1,2,3,4,5}
-
-print(mySet)
 mySet.add(1)
-print(mySet)
 mySet.add(2)
-print(mySet)
-mySet.add(2) #ignored - not added in mySet
-print(mySet)
-mySet.add('kaleb')
+mySet.add(2) 
+mySet.add('dog')
 print(mySet)
 
 print('-------------[1]--------------')

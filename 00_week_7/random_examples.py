@@ -26,7 +26,6 @@ print('\n\n')
 
 # 3. Random choice
 print('choice:', random.choice(['apple', 'banana', 'cherry']))
-print('choice:', random.choice([['cat', 'dog'], ['bird', 'snake']]))
 pause()
 
 print('\n\n')
@@ -34,7 +33,8 @@ print('--------------------[4 Random sample]----------------------------')
 print('\n\n')
 
 # 4. Random sample
-print('sample:', random.sample([1, 2, 3, 4, 5], 3))
+for i in range(100):
+    print('sample:', random.sample([1, 2, 3, 4, 5], 3))
 pause()
 
 print('\n\n')
@@ -80,7 +80,7 @@ print('--------------------[8 Random choices with weights]----------------------
 print('\n\n')
 
 # 8. Random choices with weights
-print('choices:', random.choices(['a', 'b', 'c'], weights=[5, 1, 1], k=20)) # this will generate more 'a' than 'b' and 'c' because of the weights
+print('choices:', random.choices(['a', 'b', 'c'], weights=[5, 1, 1], k=5)) # this will generate more 'a' than 'b' and 'c' because of the weights
 pause()
 
 print('\n\n')

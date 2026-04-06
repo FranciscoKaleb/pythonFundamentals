@@ -17,7 +17,7 @@ print('--------------------[2 Power]----------------------------')
 print('\n\n')
 
 # 2. Power
-print('pow:', math.pow(2, 3))
+print('pow:', math.pow(2, 3)) # 2x2x2
 pause()
 
 print('\n\n')

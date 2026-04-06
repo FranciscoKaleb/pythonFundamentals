@@ -10,3 +10,7 @@ print(myTuple3.count('a'))
 print(myTuple3.index('a'))
 
 
+
+
+
+

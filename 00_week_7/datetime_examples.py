@@ -9,8 +9,11 @@ print('--------------------[1 Current date and time]----------------------------
 print('\n\n')
 
 # 1. Current date and time
-now = datetime.datetime.now()
+
+now = datetime.datetime.now() # yyyy-mm-dd hh:mm:ss.ms
 print('Now:', now)
+#this code will print datetime without milliseconds
+print('Now (no ms):', now.replace(microsecond=0))
 pause()
 
 print('\n\n')
@@ -18,7 +21,7 @@ print('--------------------[2 Current date]----------------------------')
 print('\n\n')
 
 # 2. Current date
-cur_date = datetime.date.today()
+cur_date = datetime.date.today() # yyyy-mm-dd
 print('Today:', cur_date)
 pause()
 
