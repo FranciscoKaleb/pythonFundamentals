@@ -44,16 +44,12 @@ x = {
   "age": 30,
   "city": "New York"
 }
-
 # convert into JSON:
 y = json.dumps(x)
-
 # the result is a JSON string:
 print(y)
 
 # NOTE, in JSON the key part must always be a string
-
-
 
 pause()
 
@@ -128,7 +124,7 @@ print('---------------------[5 Reading External JSON]-----------------------')
 import json
 
 # Open file using streaming 
-with open("data.json", "r") as file:
+with open("00_week_8/data.json", "r") as file:
     data = json.load(file)  # parse JSON directly from file stream
 
 # Access data
@@ -147,20 +143,30 @@ print('---------------------[6 Adding to External JSON]-----------------------')
 import json
 
 # Step 1: Read existing JSON
-with open("data.json", "r") as file:
+with open("00_week_8/data.json", "r") as file:
     data = json.load(file)
 
 # Step 2: Add new data
-new_user = {"name": "Bob", "age": 30}
+new_user = {"name": "sam", "age": 30}
 data["users"].append(new_user)
 
 # Step 3: Write back to file
-with open("data.json", "w") as file:
+with open("00_week_8/data.json", "w") as file:
     json.dump(data, file, indent=4)
 
 print('Data added!')
 pause()
 print('---------------------[7 SEATWORK ACTIVITY]-----------------------')
+
+# 1
+# create a new file users.json
+# create a basic console app that would register user and add it to user.json
+# fields: "username, "password"
+# add loop or something
+
+
+# 2
+# make a simple login simulator
 
 
 
