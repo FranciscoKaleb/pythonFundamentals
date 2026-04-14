@@ -112,13 +112,27 @@ def cashier_page3():
 
 # ── api routes ────────────────────────────────────────────────────────────────
 
-@app.route('/api/cashiers')
+@app.route('/api/cashiers', methods=['GET'])
 @admin_required
 def api_cashiers():
     with db() as conn:
         with conn.cursor(dictionary=True) as cursor:
             cursor.execute("SELECT id, last_name, first_name, gender, age, email FROM cashiers")
             return jsonify(cursor.fetchall())
+
+@app.route('/api/cashiers', methods=['POST'])
+@admin_required
+def api_cashier_create():
+    data = request.get_json()
+    with db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "INSERT INTO cashiers (last_name, first_name, gender, age, email, password) VALUES (%s,%s,%s,%s,%s,%s)",
+                (data['last_name'], data['first_name'], data['gender'], data['age'], data['email'], data['password'])
+            )
+            new_id = cursor.lastrowid
+        conn.commit()
+    return jsonify({'success': True, 'id': new_id})
 
 @app.route('/api/cashiers/<int:id>', methods=['PUT'])
 @admin_required
@@ -142,13 +156,27 @@ def api_cashier_delete(id):
         conn.commit()
     return jsonify({'success': True})
 
-@app.route('/api/products')
+@app.route('/api/products', methods=['GET'])
 @admin_required
 def api_products():
     with db() as conn:
         with conn.cursor(dictionary=True) as cursor:
             cursor.execute("SELECT product_id, product_name, category, price, stock FROM products")
             return jsonify(cursor.fetchall())
+
+@app.route('/api/products', methods=['POST'])
+@admin_required
+def api_product_create():
+    data = request.get_json()
+    with db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "INSERT INTO products (product_name, category, price, stock) VALUES (%s,%s,%s,%s)",
+                (data['product_name'], data['category'], data['price'], data['stock'])
+            )
+            new_id = cursor.lastrowid
+        conn.commit()
+    return jsonify({'success': True, 'product_id': new_id})
 
 @app.route('/api/products/<int:id>', methods=['PUT'])
 @admin_required

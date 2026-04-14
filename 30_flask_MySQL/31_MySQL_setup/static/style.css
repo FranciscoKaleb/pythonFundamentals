@@ -374,6 +374,20 @@ body:not(.welcome-body):not(.auth-body) {
     }
 
 /* ============================================================
+   TABLE HEADER ROW  ( title + action button above table )
+   ============================================================ */
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+    .table-header h2 {
+        margin-bottom: 0;
+    }
+
+/* ============================================================
    TABLE
    ============================================================ */
 table {

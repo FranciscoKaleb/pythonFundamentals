@@ -75,6 +75,37 @@ function renderPagination() {
     container.appendChild(next);
 }
 
+// ── add ────────────────────────────────────────────────────────────────────────
+
+document.getElementById('confirm-add').onclick = () => {
+    const payload = {
+        product_name: document.getElementById('add-product-name').value,
+        category:     document.getElementById('add-category').value,
+        price:        document.getElementById('add-price').value,
+        stock:        document.getElementById('add-stock').value,
+    };
+
+    fetch('/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+        .then(res => res.json())
+        .then(data => {
+            allProducts.push({ product_id: data.product_id, ...payload });
+            renderTable();
+            hideModal('add-modal');
+            document.getElementById('add-product-name').value = '';
+            document.getElementById('add-category').value     = '';
+            document.getElementById('add-price').value        = '';
+            document.getElementById('add-stock').value        = '';
+            showToast('Product added successfully.');
+        })
+        .catch(() => showToast('Failed to add product.', true));
+};
+
+document.getElementById('cancel-add').onclick = () => hideModal('add-modal');
+
 // ── delete ────────────────────────────────────────────────────────────────────
 
 let pendingDeleteId = null;

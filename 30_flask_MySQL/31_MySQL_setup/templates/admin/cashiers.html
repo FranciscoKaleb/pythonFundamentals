@@ -1,6 +1,10 @@
 {% extends 'admin/layout.html' %}
 {% block content %}
-<h2>Cashiers</h2>
+
+<div class="table-header">
+    <h2>Cashiers</h2>
+    <button class="btn-primary" onclick="showModal('register-modal')">+ Register New Cashier</button>
+</div>
 
 <table id="cashiers-table">
     <thead>
@@ -18,6 +22,29 @@
 </table>
 
 <div id="cashiers-pagination" class="pagination"></div>
+
+<!-- Register Modal -->
+<div id="register-modal" class="modal-overlay">
+    <div class="modal-card">
+        <p class="modal-title">Register New Cashier</p>
+        <div class="form-group"><label>Last Name</label><input id="reg-last-name"  type="text" placeholder="Last name"></div>
+        <div class="form-group"><label>First Name</label><input id="reg-first-name" type="text" placeholder="First name"></div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select id="reg-gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="form-group"><label>Age</label><input id="reg-age"      type="number" placeholder="Age"></div>
+        <div class="form-group"><label>Email</label><input id="reg-email"    type="email"  placeholder="Email"></div>
+        <div class="form-group"><label>Password</label><input id="reg-password" type="password" placeholder="Password"></div>
+        <div class="modal-actions">
+            <button id="cancel-register" class="btn-secondary">Cancel</button>
+            <button id="confirm-register" class="btn-primary">Register</button>
+        </div>
+    </div>
+</div>
 
 <!-- Delete Modal -->
 <div id="delete-modal" class="modal-overlay">

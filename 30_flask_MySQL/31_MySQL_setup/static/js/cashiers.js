@@ -76,6 +76,40 @@ function renderPagination() {
     container.appendChild(next);
 }
 
+// ── register ─────────────────────────────────────────────────────────────────
+
+document.getElementById('confirm-register').onclick = () => {
+    const payload = {
+        last_name:  document.getElementById('reg-last-name').value,
+        first_name: document.getElementById('reg-first-name').value,
+        gender:     document.getElementById('reg-gender').value,
+        age:        document.getElementById('reg-age').value,
+        email:      document.getElementById('reg-email').value,
+        password:   document.getElementById('reg-password').value,
+    };
+
+    fetch('/api/cashiers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+        .then(res => res.json())
+        .then(data => {
+            allCashiers.push({ id: data.id, ...payload });
+            renderTable();
+            hideModal('register-modal');
+            document.getElementById('reg-last-name').value  = '';
+            document.getElementById('reg-first-name').value = '';
+            document.getElementById('reg-age').value        = '';
+            document.getElementById('reg-email').value      = '';
+            document.getElementById('reg-password').value   = '';
+            showToast('Cashier registered successfully.');
+        })
+        .catch(() => showToast('Registration failed.', true));
+};
+
+document.getElementById('cancel-register').onclick = () => hideModal('register-modal');
+
 // ── delete ────────────────────────────────────────────────────────────────────
 
 let pendingDeleteId = null;
