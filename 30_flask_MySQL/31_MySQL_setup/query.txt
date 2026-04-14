@@ -1,0 +1,110 @@
+
+CREATE TABLE `cashiers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `last_name` varchar(100) DEFAULT NULL,
+  `first_name` varchar(100) DEFAULT NULL,
+  `gender` enum('Male','Female') DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `cashiers` (`last_name`, `first_name`, `gender`, `age`, `email`, `password`) VALUES
+('Santos', 'Juan', 'Male', 25, 'juan.santos@example.com', 'pass123'),
+('Reyes', 'Maria', 'Female', 30, 'maria.reyes@example.com', 'pass123'),
+('Cruz', 'Pedro', 'Male', 22, 'pedro.cruz@example.com', 'pass123'),
+('Garcia', 'Ana', 'Female', 28, 'ana.garcia@example.com', 'pass123'),
+('Torres', 'Luis', 'Male', 35, 'luis.torres@example.com', 'pass123'),
+('Flores', 'Carla', 'Female', 27, 'carla.flores@example.com', 'pass123'),
+('Gonzales', 'Miguel', 'Male', 31, 'miguel.gonzales@example.com', 'pass123'),
+('Aquino', 'Liza', 'Female', 24, 'liza.aquino@example.com', 'pass123'),
+('Ramos', 'Jose', 'Male', 40, 'jose.ramos@example.com', 'pass123'),
+('Castro', 'Elena', 'Female', 29, 'elena.castro@example.com', 'pass123'),
+('Navarro', 'Carlos', 'Male', 33, 'carlos.navarro@example.com', 'pass123'),
+('Villanueva', 'Grace', 'Female', 26, 'grace.villanueva@example.com', 'pass123'),
+('Mendoza', 'Daniel', 'Male', 38, 'daniel.mendoza@example.com', 'pass123'),
+('Dela Cruz', 'Sofia', 'Female', 21, 'sofia.delacruz@example.com', 'pass123'),
+('Bautista', 'Mark', 'Male', 23, 'mark.bautista@example.com', 'pass123'),
+('Lim', 'Angela', 'Female', 32, 'angela.lim@example.com', 'pass123'),
+('Tan', 'Kevin', 'Male', 28, 'kevin.tan@example.com', 'pass123'),
+('Chua', 'Patricia', 'Female', 34, 'patricia.chua@example.com', 'pass123'),
+('Sy', 'Albert', 'Male', 45, 'albert.sy@example.com', 'pass123'),
+('Go', 'Theresa', 'Female', 37, 'theresa.go@example.com', 'pass123');
+
+
+
+CREATE TABLE admin(
+	id INT PRIMARY KEY auto_increment,
+    username VARCHAR(100),
+    password VARCHAR(100)
+);
+INSERT INTO admin(username, password) VALUES('kaleb','1234');
+
+
+CREATE TABLE `products` (
+  `product_id` int NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(100) NOT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `stock` int DEFAULT '0',
+  PRIMARY KEY (`product_id`)
+);
+
+
+
+INSERT INTO `products` (`product_name`, `category`, `price`, `stock`) VALUES
+('Laptop Pro 15', 'Electronics', 55000.00, 10),
+('Wireless Mouse', 'Electronics', 750.00, 50),
+('Mechanical Keyboard', 'Electronics', 2500.00, 30),
+('USB-C Cable', 'Accessories', 150.00, 100),
+('Power Bank 20000mAh', 'Electronics', 1200.00, 40),
+('Bluetooth Speaker', 'Electronics', 1800.00, 25),
+('Office Chair', 'Furniture', 4500.00, 15),
+('Study Desk', 'Furniture', 6500.00, 10),
+('LED Monitor 24"', 'Electronics', 9000.00, 20),
+('External Hard Drive 1TB', 'Electronics', 3200.00, 18),
+
+('Notebook A5', 'Stationery', 80.00, 200),
+('Ballpen Blue', 'Stationery', 10.00, 500),
+('Marker Black', 'Stationery', 25.00, 150),
+('Stapler', 'Stationery', 120.00, 60),
+('Printer Ink', 'Electronics', 900.00, 35),
+('Flash Drive 32GB', 'Electronics', 400.00, 70),
+('Backpack', 'Bags', 1500.00, 25),
+('Travel Bag', 'Bags', 2800.00, 12),
+('Water Bottle', 'Accessories', 300.00, 80),
+('Coffee Mug', 'Kitchen', 200.00, 90),
+
+('Electric Kettle', 'Kitchen', 1200.00, 20),
+('Rice Cooker', 'Kitchen', 2200.00, 15),
+('Blender', 'Kitchen', 1800.00, 10),
+('Frying Pan', 'Kitchen', 700.00, 40),
+('Chef Knife', 'Kitchen', 950.00, 35),
+('T-shirt Plain', 'Clothing', 350.00, 100),
+('Jeans Denim', 'Clothing', 1200.00, 60),
+('Jacket Hoodie', 'Clothing', 1800.00, 45),
+('Sneakers', 'Footwear', 2500.00, 30),
+('Sandals', 'Footwear', 800.00, 50),
+
+('Smartphone X', 'Electronics', 25000.00, 20),
+('Tablet 10"', 'Electronics', 15000.00, 15),
+('Smartwatch', 'Electronics', 7000.00, 18),
+('Headphones', 'Electronics', 2200.00, 35),
+('Gaming Chair', 'Furniture', 8500.00, 8),
+('Bookshelf', 'Furniture', 3000.00, 12),
+('Wall Clock', 'Home', 500.00, 40),
+('Table Lamp', 'Home', 900.00, 30),
+('Curtains', 'Home', 1200.00, 20),
+('Bed Sheets', 'Home', 1500.00, 25),
+
+('Dog Food 5kg', 'Pet Supplies', 1200.00, 20),
+('Cat Food 3kg', 'Pet Supplies', 900.00, 25),
+('Pet Shampoo', 'Pet Supplies', 300.00, 40),
+('Basketball', 'Sports', 600.00, 30),
+('Football', 'Sports', 550.00, 35),
+('Yoga Mat', 'Sports', 700.00, 28),
+('Dumbbell Set', 'Sports', 2500.00, 12),
+('Bicycle Helmet', 'Sports', 1200.00, 18),
+('Car Phone Holder', 'Automotive', 250.00, 60),
+('Motor Oil 1L', 'Automotive', 450.00, 50);
