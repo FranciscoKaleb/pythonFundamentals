@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <h1 class="auth-title">Sign In</h1>
+        <p class="auth-subtitle">Choose how you want to log in</p>
+        <div class="login-choice">
+            <a href="{{ url_for('admin_login') }}" class="login-card">
+                <div class="login-card-icon">&#9679;</div>
+                <div class="login-card-label">Admin</div>
+                <div class="login-card-desc">Manage cashiers, products, and transactions</div>
+            </a>
+            <a href="{{ url_for('cashier_login') }}" class="login-card">
+                <div class="login-card-icon">&#9675;</div>
+                <div class="login-card-label">Cashier</div>
+                <div class="login-card-desc">Access your cashier dashboard</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

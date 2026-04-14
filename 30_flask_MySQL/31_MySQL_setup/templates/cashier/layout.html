@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cashier Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <span>Cashier Dashboard</span>
+        <a href="{{ url_for('logout') }}" class="topbar-logout">Logout</a>
+    </header>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-title">Cashier Panel</div>
+            <nav>
+                <a href="{{ url_for('cashier_page1') }}" class="{{ 'active' if request.endpoint == 'cashier_page1' }}">Page 1</a>
+                <a href="{{ url_for('cashier_page2') }}" class="{{ 'active' if request.endpoint == 'cashier_page2' }}">Page 2</a>
+                <a href="{{ url_for('cashier_page3') }}" class="{{ 'active' if request.endpoint == 'cashier_page3' }}">Page 3</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

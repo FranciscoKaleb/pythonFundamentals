@@ -1,0 +1,39 @@
+CREATE DATABASE user_db;
+
+
+
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `last_name` varchar(100) DEFAULT NULL,
+  `first_name` varchar(100) DEFAULT NULL,
+  `gender` enum('Male','Female') DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+
+
+INSERT INTO `users` (`last_name`, `first_name`, `gender`, `age`, `email`, `password`) VALUES
+('Santos', 'Juan', 'Male', 25, 'juan.santos@example.com', 'pass123'),
+('Reyes', 'Maria', 'Female', 30, 'maria.reyes@example.com', 'pass123'),
+('Cruz', 'Pedro', 'Male', 22, 'pedro.cruz@example.com', 'pass123'),
+('Garcia', 'Ana', 'Female', 28, 'ana.garcia@example.com', 'pass123'),
+('Torres', 'Luis', 'Male', 35, 'luis.torres@example.com', 'pass123'),
+('Flores', 'Carla', 'Female', 27, 'carla.flores@example.com', 'pass123'),
+('Gonzales', 'Miguel', 'Male', 31, 'miguel.gonzales@example.com', 'pass123'),
+('Aquino', 'Liza', 'Female', 24, 'liza.aquino@example.com', 'pass123'),
+('Ramos', 'Jose', 'Male', 40, 'jose.ramos@example.com', 'pass123'),
+('Castro', 'Elena', 'Female', 29, 'elena.castro@example.com', 'pass123'),
+('Navarro', 'Carlos', 'Male', 33, 'carlos.navarro@example.com', 'pass123'),
+('Villanueva', 'Grace', 'Female', 26, 'grace.villanueva@example.com', 'pass123'),
+('Mendoza', 'Daniel', 'Male', 38, 'daniel.mendoza@example.com', 'pass123'),
+('Dela Cruz', 'Sofia', 'Female', 21, 'sofia.delacruz@example.com', 'pass123'),
+('Bautista', 'Mark', 'Male', 23, 'mark.bautista@example.com', 'pass123'),
+('Lim', 'Angela', 'Female', 32, 'angela.lim@example.com', 'pass123'),
+('Tan', 'Kevin', 'Male', 28, 'kevin.tan@example.com', 'pass123'),
+('Chua', 'Patricia', 'Female', 34, 'patricia.chua@example.com', 'pass123'),
+('Sy', 'Albert', 'Male', 45, 'albert.sy@example.com', 'pass123'),
+('Go', 'Theresa', 'Female', 37, 'theresa.go@example.com', 'pass123');

@@ -10,6 +10,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/products')
+def products():
+    return render_template('products.html')
+
 # you can keep adding more routes and functions here to handle different URLs and logic for your application.
 
 

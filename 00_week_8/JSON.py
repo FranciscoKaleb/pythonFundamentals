@@ -158,6 +158,7 @@ print('Data added!')
 pause()
 print('---------------------[7 SEATWORK ACTIVITY]-----------------------')
 
+
 # 1
 # create a new file users.json
 # create a basic console app that would register user and add it to user.json

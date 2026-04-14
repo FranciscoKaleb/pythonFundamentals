@@ -4,9 +4,16 @@
 #[1]
 print('\n\n')
 print('-----------------[1 basic printing]------------------')
-dictionary1 = {'key1':'value1','key2':'value2'}
-print(dictionary1)
-print(dictionary1['key1']) #accessing value using key
+dictionary1 = {
+        'key1':'value1',
+        'key2': 3,
+        'key3': {
+                '1': [1,2,3],
+                '2': [1,2,3]
+            },
+    }
+# print(dictionary1)
+print(dictionary1['key3']['1']) #accessing value using key
 print('\n\n')
 
 print('-----------------[2 basic]------------------')
