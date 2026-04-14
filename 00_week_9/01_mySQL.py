@@ -16,7 +16,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 # 2. Execute a sample SELECT query
-cursor.execute("SELECT * FROM users")
+cursor.execute("SELECT * FROM cashiers")
 rows = cursor.fetchall() # rows is a list of tuples, each tuple represents a row in the users table
 
 for row in rows:
