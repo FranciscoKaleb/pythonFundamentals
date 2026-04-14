@@ -120,6 +120,28 @@ def api_cashiers():
             cursor.execute("SELECT id, last_name, first_name, gender, age, email FROM cashiers")
             return jsonify(cursor.fetchall())
 
+@app.route('/api/cashiers/<int:id>', methods=['PUT'])
+@admin_required
+def api_cashier_update(id):
+    data = request.get_json()
+    with db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "UPDATE cashiers SET last_name=%s, first_name=%s, gender=%s, age=%s, email=%s WHERE id=%s",
+                (data['last_name'], data['first_name'], data['gender'], data['age'], data['email'], id)
+            )
+        conn.commit()
+    return jsonify({'success': True})
+
+@app.route('/api/cashiers/<int:id>', methods=['DELETE'])
+@admin_required
+def api_cashier_delete(id):
+    with db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("DELETE FROM cashiers WHERE id=%s", (id,))
+        conn.commit()
+    return jsonify({'success': True})
+
 @app.route('/api/products')
 @admin_required
 def api_products():
@@ -127,6 +149,28 @@ def api_products():
         with conn.cursor(dictionary=True) as cursor:
             cursor.execute("SELECT product_id, product_name, category, price, stock FROM products")
             return jsonify(cursor.fetchall())
+
+@app.route('/api/products/<int:id>', methods=['PUT'])
+@admin_required
+def api_product_update(id):
+    data = request.get_json()
+    with db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "UPDATE products SET product_name=%s, category=%s, price=%s, stock=%s WHERE product_id=%s",
+                (data['product_name'], data['category'], data['price'], data['stock'], id)
+            )
+        conn.commit()
+    return jsonify({'success': True})
+
+@app.route('/api/products/<int:id>', methods=['DELETE'])
+@admin_required
+def api_product_delete(id):
+    with db() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("DELETE FROM products WHERE product_id=%s", (id,))
+        conn.commit()
+    return jsonify({'success': True})
 
 if __name__ == '__main__':
     app.run(debug=True)
